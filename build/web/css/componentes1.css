@@ -1,0 +1,219 @@
+/*  
+ * ESTILOS PARA EL DASHBOART
+ *
+ */
+ :root {
+    --clr: #14161e;
+}
+
+.siderbar {
+    position: fixed;
+    width: 80px;
+    height: 100vh;
+    background: var(--clr);
+    transition: 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.siderbar.active {
+    width: 370px;
+}
+
+.siderbar ul {
+    position: relative;
+    height: 100vh;
+}
+
+.siderbar ul li {
+    position: relative;
+    list-style: none;
+}
+
+.siderbar ul li.active {
+    background-color: #fff;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px
+}
+
+.siderbar ul li.active::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0px 5px #fff;
+    background: transparent;
+}
+
+.siderbar ul li.active::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0px 5px #fff;
+    background: transparent;
+}
+
+.siderbar ul li.logo {
+    margin-bottom: 20px;
+}
+
+.siderbar ul li.logo .icon {
+    font-size: 2em;
+    color: #fff;
+}
+
+.siderbar ul li.logo .text {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fff;
+}
+
+.siderbar ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: auto;
+    align-items: center;
+    height: 70px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    align-content: center;
+}
+
+.siderbar ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 60px;
+    height: 30px;
+    font-size: 1.5em;
+    color: #fff;
+    transition: .5s;
+    padding-left: 10px;
+}
+
+.siderbar ul li a .text  {
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #fff;
+    padding-left: 0.05em;
+    transition: 0.5s;
+    padding-left: 10px;
+}
+
+.siderbar input[type="submit"] {
+    background: #ece7e700;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.siderbar ul li.active a .icon {
+    color: #fff;
+}
+
+.siderbar ul li.active a input[type="submit"] {
+    color: var(--bg);
+}
+
+.siderbar ul li:hover a .icon,
+.siderbar ul li:hover a .text,
+.siderbar ul li:hover a input[type="submit"] {   
+    color: var(--bg);
+}
+
+.siderbar ul li.active a .icon::before {
+    content: '';
+    position: absolute;
+    inset: -16px 5px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+    
+}
+
+.siderbar ul li:hover.active a .icon::before {
+    background-color: var(--clr);
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.imgBx {
+    position: relative; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imgBx img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menuToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #31a4ff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuToggle::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-9px);
+    transition: .5s;
+    box-shadow: 0px 9px 0px #fff;
+}
+
+.menuToggle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(9px);
+    transition: .5s;
+}
+
+.menuToggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0px 0px 0px #fff;
+}
+
+.menuToggle.active::after{
+    transform: translateY(0px) rotate(-45deg);
+}
