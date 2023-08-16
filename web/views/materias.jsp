@@ -27,8 +27,24 @@
                             <input type='text' class='controls' name='tfNombre'>
                         </div>
                         <div >
-                            <label>CUATRIMESTRE</label>
-                            <input type='text' class='controls' name='tfCuatrimestre'>
+                            <!-- <label>CUATRIMESTRE</label>
+                            <input type='text' class='controls' name='tfCuatrimestre'> -->
+
+                            <label>Selecciona un cuatrimestre</label>
+                            <select id="tfCuatrimestre" name="tfCuatrimestre">
+                                <option selected>-Cuatrimestre-</option>
+                                <option value="1ro">1ro</option>
+                                <option value="2do">2do</option>
+                                <option value="3ro">3ro</option>
+                                <option value="4to">4to</option>
+                                <option value="5to">5to</option>
+                                <option value="6to">6to</option>
+                                <option value="7mo">7mo</option>
+                                <option value="8vo">8vo</option>
+                                <option value="9no">9no</option>
+                                <option value="10mo">10mo</option>
+                                <option value="11vo">11vo</option>
+                            </select>
                         </div>
                     </div>
                     <input type="submit" name="btnMateriaNueva" value="Guardar">

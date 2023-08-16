@@ -84,8 +84,32 @@ public class SvMenu extends HttpServlet {
             materiasDao.editar(materia, claveMatOld);
             
             url_files = "views/materias.jsp";
-        } 
+        }
+        
+        if(request.getParameter("btnActulizarAlumno")!=null)
+        {
+            Alumnos alumno = new Alumnos();
+            String matricula = request.getParameter("tfMatriculaOld");
+            
+            alumno.setMatricula(request.getParameter("tfMatricula"));
+            alumno.setNombre(request.getParameter("tfNombre"));
+            alumno.setPaterno(request.getParameter("tfPaterno"));
+            alumno.setMaterno(request.getParameter("tfMaterno"));
+            alumno.setSexo(request.getParameter("tfSexo"));
+            alumno.setFechaNac(request.getParameter("tfFechaNac"));
+            alumno.setTelefono(request.getParameter("tfTelefono"));
+            alumno.setDireccion(request.getParameter("tfDireccion"));
+            alumno.setCorreo(request.getParameter("tfCorreo"));
+            
+            // System.out.println("Matricula en el servlet: " + matricula);
+            AlumnosDAO alumnosDao = new AlumnosDAO();
+            alumnosDao.editar(alumno, matricula);
+            
+            url_files = "views/alumnos.jsp";
+        }
+        
         accion=request.getParameter("accion");
+        
         if(accion!=null && accion.equalsIgnoreCase("editar"))
         {
            request.setAttribute("claveMateria", request.getParameter("claveMateria"));
@@ -96,6 +120,19 @@ public class SvMenu extends HttpServlet {
             MateriasDAO materiasDao = new MateriasDAO();
             materiasDao.eliminar(claveMateria);
             url_files = "views/materias.jsp";
+        }
+        
+        
+        if(accion!=null && accion.equalsIgnoreCase("editarM"))
+        {
+           request.setAttribute("matricula", request.getParameter("matricula"));
+           url_files = "views/alumnosEditar.jsp";
+        } else if(accion!=null && accion.equalsIgnoreCase("eliminarM"))
+        {
+            String matricula = request.getParameter("matricula");
+            AlumnosDAO alumnosDao = new AlumnosDAO();
+            alumnosDao.eliminar(matricula);
+            url_files = "views/alumnos.jsp";
         }
 
         request.getRequestDispatcher(url_files).forward(request, response);

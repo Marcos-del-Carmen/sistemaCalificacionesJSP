@@ -16,7 +16,7 @@
     <body>
         <%
             AlumnosDAO dao = new AlumnosDAO();
-            String matricula = request.getAttribute("claveMateria").toString();
+            String matricula = request.getAttribute("matricula").toString();
             Alumnos alumno = dao.buscar(matricula);
         %>
         
@@ -24,11 +24,11 @@
             <div class='form-register'>
             <form action="SvMenu" method='post' id='formulario'>
                 <div class='form-group'>
-                    <input type="hidden" name="tfClaveMateriaOld" value="<%= alumno.getMatricula() %>">
+                    <input type="hidden" name="tfMatriculaOld" value="<%= alumno.getMatricula() %>">
                 </div>
                 <div class='form-group'>
                     <label for='lblMatricula'>Matricula</label>
-                    <input type='text' class='controls' name='tfClaveMateria' value = "<%= alumno.getMatricula() %>">
+                    <input type='text' class='controls' name='tfMatricula' value = "<%= alumno.getMatricula() %>">
                 </div>
                 <div class="row">
                     <div class='col-4'>
@@ -38,11 +38,11 @@
                     </div>
                     <div class='col-4'>
                         <label>Paterno</label>
-                        <input type='text' class='controls' name='tfCuatrimestre' value = "<%= alumno.getPaterno() %>">
+                        <input type='text' class='controls' name='tfPaterno' value = "<%= alumno.getPaterno() %>">
                     </div>
                     <div class='col-4'>
                         <label>Materno</label>
-                        <input type='text' class='controls' name='tfCuatrimestre' value = "<%= alumno.getMaterno() %>">
+                        <input type='text' class='controls' name='tfMaterno' value = "<%= alumno.getMaterno() %>">
                     </div>
                     <div class='col-4'>
                         <label>Sexo</label>

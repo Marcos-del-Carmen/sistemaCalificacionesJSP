@@ -27,12 +27,12 @@
             <div class="cont-form-alumnos">
                 <form action="SvMenu" method="POST">
                     <div class="cont-input">
-                        <label for="">Matricula</label>
+                        <label>Matricula</label>
                         <br>
                         <input type="text" name="tfMatricula">
                     </div>
                     <div class="cont-input">
-                        <label for="">Nombre</label>
+                        <label>Nombre</label>
                         <br>
                         <input type="text" name="tfNombre">
                     </div>
@@ -51,8 +51,10 @@
                     
                     <div class="cont-input">
                         <label>Sexo</label>
-                        <br>
-                        <input type="text" name="tfSexo">
+                        <select name="tfSexo" id="tfSexo">
+                            <option value="F">Femenino</option>
+                            <option value="M">Masculino</option>
+                        </select>
                     </div>
                     
                     <div class="cont-input">
@@ -63,14 +65,8 @@
                     
                     <div class="cont-input">
                         <label>Telefono</label>
-                        <br><
-                        <input type="text" name="tfTelefono">
-                    </div>
-                    
-                    <div class="cont-input">
-                        <label>Correo</label>
                         <br>
-                        <input type="email" name="tfCorreo">
+                        <input type="text" name="tfTelefono">
                     </div>
                     
                     <div class="cont-input">
@@ -79,7 +75,13 @@
                         <input type="text" name="tfDireccion">
                     </div>
                     
-                    <input type="submit" name="btnAlumnoNuevo" value="Guardar registro"/>
+                    <div class="cont-input">
+                        <label>Correo</label>
+                        <br>
+                        <input type="email" name="tfCorreo">
+                    </div>
+                    
+                    <input type="submit" name="btnAlumnoNuevo" value="Guardar registro" class="boton"/>
                 </form>
             </div>
             
@@ -115,8 +117,8 @@
                             <td><%= alumno.getTelefono()%></td>
                             <td><%= alumno.getDireccion()%></td>
                             <td><%= alumno.getCorreo()%></td>
-                            <td><a href="SvMenu?accion=editar&matricula=<%= alumno.getMatricula() %>">Editar</a></td>
-                            <td><a href="SvMenu?accion=eliminar&matricula=<%= alumno.getMatricula() %>">Eliminar</a></td>
+                            <td><a href="SvMenu?accion=editarM&matricula=<%= alumno.getMatricula() %>">Editar</a></td>
+                            <td><a href="SvMenu?accion=eliminarM&matricula=<%= alumno.getMatricula() %>">Eliminar</a></td>
                         </tr>
                         <%
                             }

@@ -92,7 +92,7 @@ public class AlumnosDAO {
             " FechaNac              = '" + alumno.getFechaNac()             + "'," +
             " Telefono              = '" + alumno.getTelefono()             + "'," +
             " Direccion             = '" + alumno.getDireccion()            + "'," +
-            " Correo                = '" + alumno.getCorreo()               + "'," +
+            " Correo                = '" + alumno.getCorreo()               + "'" +
             " WHERE Matricula = '" + old + "'";
         
         System.out.println("Clave matricula a editar: " + old); // Imprimir la clave de materia
@@ -146,6 +146,12 @@ public class AlumnosDAO {
                 alumnos.setMatricula(rs.getString("Matricula"));
                 alumnos.setNombre(rs.getString("Nombre"));
                 alumnos.setPaterno(rs.getString("Paterno"));
+                alumnos.setMaterno(rs.getString("Materno"));
+                alumnos.setSexo(rs.getString("Sexo"));
+                alumnos.setFechaNac(rs.getString("FechaNac"));
+                alumnos.setTelefono(rs.getString("Telefono"));
+                alumnos.setDireccion(rs.getString("Direccion"));
+                alumnos.setCorreo(rs.getString("Correo"));
             }
             rs.close();
             ps.close();

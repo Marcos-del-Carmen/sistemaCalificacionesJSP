@@ -33,5 +33,21 @@
                 }
             }
         %>
+
+        <label>Selecciona un cuatrimestre</label>
+        <select id="tfCuatrimestre" name="tfCuatrimestre">
+            <option selected>-Cuatrimestre-</option>
+            <option value="1">1ro cuatrimestre</option>
+            <option value="2">2do cuatrimestre</option>
+            <option value="3">3ro cuatrimestre</option>
+            <option value="4">4to cuatrimestre</option>
+            <option value="5">5to cuatrimestre</option>
+            <option value="6">6to cuatrimestre</option>
+            <option value="7">7mo cuatrimestre</option>
+            <option value="8">8vo cuatrimestre</option>
+            <option value="9">9no cuatrimestre</option>
+            <option value="10">10mo cuatrimestre</option>
+            <option value="11">11vo cuatrimestre</option>
+        </select>
     </body>
 </html>
